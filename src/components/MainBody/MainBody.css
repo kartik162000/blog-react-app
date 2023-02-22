@@ -1,0 +1,11 @@
+
+.card_area {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    min-height: 79vh;
+    gap: 10px 50px;
+    justify-content: space-between;
+}

@@ -1,0 +1,13 @@
+.outerFooter {
+    background-color: #000;
+    color: white;
+}
+
+.innerfooter {
+    height: 5vh;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
