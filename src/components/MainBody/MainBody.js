@@ -1,15 +1,32 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import Card from "../Card/Card";
-import { stockData } from "../../assets/data";
-
+import { GET_BLOG_DATA } from "../../constants/apiEndPoints";
+import makeRequest from "../../utils/makeRequest";
 import "./MainBody.css";
 function MainBody() {
-  return (
+  const [blogData, setBlogData] = useState([]);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    makeRequest(GET_BLOG_DATA)
+      .then((response) => {
+        setBlogData(response);
+      })
+      .catch((e) => {
+        setError(e.message);
+      });
+  }, []);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+  return blogData ? (
     <div>
       <div className="card_area">
-        {stockData.map((data) => {
+        {blogData.map((data) => {
           return (
             <Card
+              key={data.id}
               date={data.date}
               readingTime={data.readingTime}
               title={data.title}
@@ -17,11 +34,14 @@ function MainBody() {
               claps={data.claps}
               liked={data.liked}
               image={data.image}
+              id={data.id}
             />
           );
         })}
       </div>
     </div>
+  ) : (
+    <div>Loading...</div>
   );
 }
 
