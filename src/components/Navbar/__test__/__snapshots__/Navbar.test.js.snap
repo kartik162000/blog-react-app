@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render when component is mounted 1`] = `
+<div>
+  <div
+    class="navbar"
+  >
+    <div
+      class="navbar_content"
+    >
+      <div
+        class="navbar_brand_name"
+      >
+        <p>
+          The Artifact
+        </p>
+        <p>
+          Culture & Art blog
+        </p>
+      </div>
+      <div
+        class="navbar_links"
+      >
+        <a
+          href="#"
+        >
+          Blog
+        </a>
+        <a
+          href="#"
+        >
+          About
+        </a>
+        <a
+          href="#"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

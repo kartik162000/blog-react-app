@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component rendring test should render when component is mounted 1`] = `
+<DocumentFragment>
+  <div
+    class="card-main"
+  >
+    <div
+      class="card-image"
+    >
+      <img
+        alt="image"
+        src="abstract.png"
+      />
+    </div>
+    <div
+      class="card-content"
+    >
+      <div
+        class="card-caption"
+      >
+        <div
+          class="card-date"
+        >
+          2021-08-01
+        </div>
+        <div
+          class="card-reading-time"
+        >
+          5 min read
+        </div>
+      </div>
+      <div
+        class="card-title"
+      >
+        <h4>
+          How to write a test
+        </h4>
+      </div>
+      <div
+        class="card-description"
+      >
+        <p>
+          This is a test description
+        </p>
+      </div>
+      <hr
+        id="cardLine"
+      />
+      <div
+        class="card-footer"
+      >
+        <div
+          class="card-clap"
+        >
+          <img
+            alt="clap"
+            src="clapping.svg"
+          />
+          <div
+            class="card-clap-count"
+          >
+            10
+          </div>
+        </div>
+        <div
+          class="card-heart"
+        >
+          <img
+            alt="heart"
+            src="heart-black.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

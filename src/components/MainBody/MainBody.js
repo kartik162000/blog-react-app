@@ -17,6 +17,7 @@ function MainBody() {
               claps={data.claps}
               liked={data.liked}
               image={data.image}
+              key={data.id}
             />
           );
         })}
