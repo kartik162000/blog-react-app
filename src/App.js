@@ -1,15 +1,20 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar"; // Import
-import Footer from "./components/Footer/Footer"; // Import
-import MainBody from "./components/MainBody/MainBody"; // Import
+import MainPage from "./pages/MainPage/MainPage";
+import Error from "./pages/Error";
+import PageNotFound from "./pages/PageNotFound";
 import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <MainBody />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/error/:errorCode" element={<Error />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -53,4 +53,25 @@ describe("makeRequest", () => {
     });
     expect(response).toEqual({ data: { claps: 1 } });
   });
+  it("Should navigate to error page when api call return error status code", async () => {
+    const mockNavigate = jest.fn();
+    axios.mockRejectedValue({
+      response: {
+        status: 500,
+      },
+    });
+    expect(mockNavigate).not.toBeCalled();
+    await makeRequest(GET_BLOG_DATA, {}, mockNavigate);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith("error/500");
+  });
+
+  it("Should navigate to error page when api call return error status code not present", async () => {
+    const mockNavigate = jest.fn();
+    axios.mockRejectedValue({});
+    expect(mockNavigate).not.toBeCalled();
+    await makeRequest(GET_BLOG_DATA, {}, mockNavigate);
+    expect(mockNavigate).toHaveBeenCalledTimes(1);
+    expect(mockNavigate).toHaveBeenCalledWith("error");
+  });
 });
