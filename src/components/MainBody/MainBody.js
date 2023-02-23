@@ -21,27 +21,26 @@ function MainBody() {
     return <div>{error}</div>;
   }
   return blogData ? (
-    <div>
-      <div className="card_area">
-        {blogData.map((data) => {
-          return (
-            <Card
-              key={data.id}
-              date={data.date}
-              readingTime={data.readingTime}
-              title={data.title}
-              description={data.description}
-              claps={data.claps}
-              liked={data.liked}
-              image={data.image}
-              id={data.id}
-            />
-          );
-        })}
-      </div>
+    <div className="card_area" data-testid="blog-post">
+      {blogData.map((task) => (
+        <Card
+          key={task.id}
+          id={task.id}
+          date={task.date}
+          readingTime={task.readingTime}
+          title={task.title}
+          description={task.description}
+          claps={task.claps}
+          liked={task.liked}
+          image={task.image}
+        />
+      ))}
     </div>
   ) : (
-    <div>Loading...</div>
+    <div className="blogDataLoader">
+      {console.log("blogDataLoader")}
+      <p>Loading...</p>
+    </div>
   );
 }
 
